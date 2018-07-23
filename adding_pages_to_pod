@@ -1,0 +1,30 @@
+#Reference : https://cocoapods.org/pods/Calendar-iOS
+
+#import "CalendarView.h"
+#import "NSDate+CalendarView.h"
+#import "NSString+CalendarView.h"
+
+@interface ClassMe() <CalendarViewDelegate>
+{
+      
+}
+@end
+
+- (IBAction)funDateSelected:(id)sender {  
+    CalendarView *calendarView = [[CalendarView alloc] initWithPosition:20.0 y:10.0];
+    [self.view addSubview:calendarView];
+    calendarView.calendarDelegate = self; //delegates
+    calendarView.shouldShowHeaders = 1; // to show headers
+    calendarView.selectionColor = [UIColor colorWithRed:0.203 green:0.666 blue:0.862 alpha:1.000];
+    calendarView.fontHeaderColor = [UIColor colorWithRed:0.203 green:0.666 blue:0.862 alpha:1.000];  
+}
+
+
+- (void)didChangeCalendarDate:(NSDate *)date {
+    NSLog(@"date changed");
+}
+
+- (void)didDoubleTapCalendar:(NSDate *)date withType:(NSInteger)type;{
+     NSLog(@"didDoubleTapCalendar....");
+}
+
