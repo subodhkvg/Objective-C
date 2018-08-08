@@ -1,0 +1,19 @@
+if (buttonIndex == 0) {
+        
+        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+        {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self showCamera:UIImagePickerControllerSourceTypeCamera];
+            }];
+            
+            
+        }
+        else{
+            //[Util showCommonAlert:@"" andMessage:@"Your device does not support a camera."];
+        }
+    }
+    else if(buttonIndex == 1) {
+         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [self showCamera:UIImagePickerControllerSourceTypePhotoLibrary];
+        }];
+    }
