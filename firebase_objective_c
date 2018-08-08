@@ -1,0 +1,14 @@
+@import Firebase;
+@import FirebaseAuth;
+
+self.ref = [[FIRDatabase database] reference];
+
+if([[FIRAuth auth] currentUser]){
+        //logged in user
+        FIRUser *user = [FIRAuth auth].currentUser;
+         [[[self.ref child:@"users"] child:user.uid]
+         setValue:@{@"stFirstName": @"abc",
+                    @"stGender": @"male",
+                    @"stLastName": @"xyz"                   
+                    }];
+}
