@@ -1,0 +1,3 @@
+//Set Labels to Button
+
+[self.btn setTitle:@"SAVE" forState:UIControlStateNormal];  
