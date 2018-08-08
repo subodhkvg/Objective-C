@@ -1,6 +1,11 @@
+.h file
+-----------------
 @import Firebase;
 @import FirebaseAuth;
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 
+.m file
+-----------------
 self.ref = [[FIRDatabase database] reference];
 
 if([[FIRAuth auth] currentUser]){
