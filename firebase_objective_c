@@ -17,3 +17,17 @@ if([[FIRAuth auth] currentUser]){
                     @"stLastName": @"xyz"                   
                     }];
 }
+
+
+//forgot password email link:
+
+[[FIRAuth auth] sendPasswordResetWithEmail:email completion:^(NSError * _Nullable error) {
+        if (error != nil) {
+            // Uh-oh, an error occurred!
+            NSLog(@"Error occured while Sending password %@",error);
+        } else {
+            NSLog(@"Password email sent successfully");
+        }
+ }];
+    
+    
