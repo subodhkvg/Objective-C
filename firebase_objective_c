@@ -29,5 +29,11 @@ if([[FIRAuth auth] currentUser]){
             NSLog(@"Password email sent successfully");
         }
  }];
+
+------------
+Firebase timestamp : [FIRServerValue timestamp]
+
+
+
     
     
