@@ -1,0 +1,20 @@
+To download a config file for an iOS app:
+
+Sign in to Firebase and open your project.
+Click the Settings icon and select Project settings.
+In the Your apps card, select the bundle ID of the app you need a config file for from the list.
+Click GoogleService-Info.plist.
+
+
+add this file in main folder of project.
+
+Note. file name should reain same i.e. GoogleService-Info.plist
+
+Add below pod files in Podfile.rb
+
+pod 'Firebase/Core'
+pod 'Firebase/Database'
+pod 'Firebase/Auth'
+pod 'Firebase/Storage'
+
+and install these pods
