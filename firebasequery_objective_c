@@ -1,0 +1,13 @@
+FIRDatabaseQuery *myTopPostsQuery = [[[self.ref child:@"tblname"]
+                                          queryOrderedByChild:@"User/stCustomerKey"]
+                                         queryEqualToValue:@"Cust0"];    
+    [myTopPostsQuery observeEventType:FIRDataEventTypeChildAdded
+     withBlock:^(FIRDataSnapshot *snapshot) {
+         NSLog(@"%@ KeyX %@ Value", snapshot.key,snapshot.value);
+         self->NSDict[snapshot.key] = snapshot.value;
+         [self->resultArray addObject:snapshot.value];
+         [self->resultArrayKey addObject:snapshot.key];
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [self.tbl_view reloadData];
+         });
+     }];
