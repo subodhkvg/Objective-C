@@ -1,0 +1,9 @@
+    NSString * bookingdate = @"";
+    bookingdate = [NSString stringWithFormat:@"%@",dict[@"inDate"]];    
+    NSTimeInterval _interval=[bookingdate doubleValue];
+    NSLog(@"inDate => %@",dict[@"inDate"]);
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:(_interval/1000) ];
+    NSDateFormatter *dateformatter=[[NSDateFormatter alloc]init];
+    [dateformatter setDateFormat:@"d, h:mm a"];//@"MMM d, h:mm a"
+    NSString *dateString=[dateformatter stringFromDate:date];
+    NSLog(@"Date: %@", dateString);
