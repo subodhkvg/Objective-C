@@ -1,0 +1,14 @@
+-(void)funCancel:(NSString *)object{
+    //----------------------
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Cancel Me" message:@"Do you really wants to cancel?" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction1 = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [self funRejectMe:object];
+    }];
+    UIAlertAction* defaultAction2 = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        return;
+    }];    
+    [alert addAction:defaultAction1];
+    [alert addAction:defaultAction2];
+    [self presentViewController:alert animated:YES completion:nil];
+    //----------------------
+}
