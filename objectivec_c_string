@@ -1,0 +1,13 @@
+  1) substringToIndex (Start substring)
+  
+    NSString * state = @" abcdefgh";    
+    NSString *code = [state substringToIndex: [state length] - 3];
+    NSLog(@"code %@==>",code);
+    //output:==> abcde
+  
+  2) substringFromIndex (End substring)
+  
+   NSString * state = @" abcdefgh";
+   NSString *code = [state substringFromIndex: [state length] - 3];
+   NSLog(@"code %@==>",code);
+   //op:==> fgh
