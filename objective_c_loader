@@ -1,0 +1,25 @@
+//Show Loader
+[Util showLoader:@"" forView:self.view];
+
+//Hide Loader
+dispatch_async(dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:0 animations:^{
+            [self.tbl_view reloadData];
+        } completion:^(BOOL finished) {
+            [Util hideLoader:self.view];
+        }];
+    });
+    
+
+#import "MBProgressHUD.h"
++(void)showLoader:(NSString *)loaderText forView:(UIView *)view{
+    
+    loaderView = view;
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.6f];
+    
+    if(loaderText.length >0){
+        hud.labelText = loaderText;
+    }
+}
