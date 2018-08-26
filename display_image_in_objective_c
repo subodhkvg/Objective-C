@@ -6,6 +6,7 @@
 
 if([snapshot.key isEqual: @"stProfileImage"]){ // For firebase
 
+NSString* strImgURL = [[Util defaultSetupForNullValue:snapshot.value] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 [self->_img1 sd_setImageWithURL:[NSURL URLWithString:[Util defaultSetupForNullValue:strImgURL]] placeholderImage:[UIImage imageNamed:@"ic_avtar.png"]];
 self->_img1.layer.cornerRadius = self->_img1.frame.size.width / 2;
 self->_img1.clipsToBounds = YES;
