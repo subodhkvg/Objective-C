@@ -1,0 +1,13 @@
+.h file
+@property (weak, nonatomic) IBOutlet UIImageView *img1;
+
+.m file
+#import "SDWebImage/UIImageView+WebCache.h"
+
+if([snapshot.key isEqual: @"stProfileImage"]){ // For firebase
+
+[self->_img1 sd_setImageWithURL:[NSURL URLWithString:[Util defaultSetupForNullValue:strImgURL]] placeholderImage:[UIImage imageNamed:@"ic_avtar.png"]];
+self->_img1.layer.cornerRadius = self->_img1.frame.size.width / 2;
+self->_img1.clipsToBounds = YES;
+
+}
