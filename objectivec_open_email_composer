@@ -1,0 +1,34 @@
+@interface TestVC ()<MFMailComposeViewControllerDelegate>{
+    
+}
+@property (strong, nonatomic) MFMailComposeViewController *composeVC;
+
+-----------
+
+- (IBAction)funSendEmail:(UIButton *)sender {
+    if (![MFMailComposeViewController canSendMail]) {
+        NSLog(@"Mail services are not available.");
+        return;
+    }
+    _composeVC = [[MFMailComposeViewController alloc] init];
+    _composeVC.mailComposeDelegate = self;
+    // Configure the fields of the interface.
+    [_composeVC setToRecipients:@[@"test@gmail.com"]];
+    [_composeVC setSubject:@"Hello!"];
+    [_composeVC setMessageBody:@"Hello from California!" isHTML:NO];
+    // Present the view controller modally.
+    [self presentViewController:_composeVC animated:YES completion:nil];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    // Check the result or perform other tasks.
+    
+    // Dismiss the mail compose view controller.
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+---------
+
+self->_btn_email_id.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+[self->_btn_email_id setTitle:[NSString stringWithFormat: @"%@", snapshot.value] forState:UIControlStateNormal];
