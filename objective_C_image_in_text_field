@@ -1,0 +1,7 @@
+UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"location.png"]];
+    //imgView.image = [UIImage imageNamed:@"location.png"];
+    
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, imgView.frame.size.width + 10, imgView.frame.size.height)];
+    [paddingView addSubview:imgView];
+    [self.txt_location setLeftViewMode:UITextFieldViewModeAlways];
+    [self.txt_location setLeftView:paddingView];
