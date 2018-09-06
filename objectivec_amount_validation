@@ -1,0 +1,11 @@
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *myNumber = [formatter numberFromString:_txt_location.text];
+    
+    if (myNumber != nil) {
+        NSLog(@"valid number");
+        //return;
+    }else {
+        NSLog(@"invalid number");
+        return;
+    }
