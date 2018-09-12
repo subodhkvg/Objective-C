@@ -1,0 +1,26 @@
+    [button setTitleColor:[UIColor colorWithRed:248/255.0 green:99/255.0 blue:173/255.0 alpha:1.0] forState:UIControlStateNormal];
+    //Define Color
+    UIColor *color = [UIColor redColor];    
+    
+    //Define Style
+    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    [style setAlignment:NSTextAlignmentCenter];
+    [style setLineBreakMode:NSLineBreakByWordWrapping];
+    
+    //Define font for underline
+    UIFont *font = [UIFont fontWithName:@"Arial" size:15.0f];
+      NSDictionary *dict = @{
+      NSUnderlineStyleAttributeName:@(NSUnderlineStyleSingle),
+      NSFontAttributeName:font,
+      NSParagraphStyleAttributeName:style,
+      NSForegroundColorAttributeName: color
+    };
+    
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] init];
+    [attString appendAttributedString:[[NSAttributedString alloc] initWithString:@"Click Me" attributes:dict]];
+    
+    [button setAttributedTitle:attString forState:UIControlStateNormal];
+    [[button titleLabel] setNumberOfLines:0];
+    [[button titleLabel] setLineBreakMode:NSLineBreakByWordWrapping]; 
+    
+    
