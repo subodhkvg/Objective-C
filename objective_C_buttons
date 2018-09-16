@@ -7,3 +7,7 @@
 
 //Set Background Image to Button
 [cell.button setBackgroundImage:[UIImage imageNamed:@"image1.png"] forState:UIControlStateNormal];
+
+//Appending function to button in CELL ROW
+
+[cell.button addTarget:self action:@selector(yourButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
