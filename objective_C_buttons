@@ -1,3 +1,9 @@
 //Set Labels to Button
 
 [self.btn setTitle:@"SAVE" forState:UIControlStateNormal];  
+
+/Set Image to Button in Objective C
+[cell.button setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+
+//Set Background Image to Button
+[cell.button setBackgroundImage:[UIImage imageNamed:@"image1.png"] forState:UIControlStateNormal];
