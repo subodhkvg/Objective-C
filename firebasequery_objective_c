@@ -11,3 +11,7 @@ FIRDatabaseQuery *myTopPostsQuery = [[[self.ref child:@"tblname"]
              [self.tbl_view reloadData];
          });
      }];
+     
+     //Delete record in objective C
+     
+     setValue:nil
