@@ -1,0 +1,36 @@
+@interface MyViewController : UIViewController {
+    UISlider *slider;
+    NSArray *numbers;
+}
+@end
+
+@implementation MyViewController
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    slider = [[UISlider alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:slider];
+
+    // These number values represent each slider position
+    numbers = @[@(-3), @(0), @(2), @(4), @(7), @(10), @(12)];
+    // slider values go from 0 to the number of values in your numbers array
+    NSInteger numberOfSteps = ((float)[numbers count] - 1);
+    slider.maximumValue = numberOfSteps;
+    slider.minimumValue = 0;
+
+    // As the slider moves it will continously call the -valueChanged: 
+    slider.continuous = YES; // NO makes it call only once you let go
+    [slider addTarget:self
+               action:@selector(valueChanged:)
+     forControlEvents:UIControlEventValueChanged];
+}
+- (void)valueChanged:(UISlider *)sender {
+    // round the slider position to the nearest index of the numbers array
+    NSUInteger index = (NSUInteger)(slider.value + 0.5);
+    [slider setValue:index animated:NO];
+    NSNumber *number = numbers[index]; // <-- This numeric value you want
+    NSLog(@"sliderIndex: %i", (int)index);
+    NSLog(@"number: %@", number);
+}
+
+//Reference:
+https://stackoverflow.com/questions/8219056/uislider-that-snaps-to-a-fixed-number-of-steps-like-text-size-in-the-ios-7-sett/8219848#8219848
