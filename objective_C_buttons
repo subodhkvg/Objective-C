@@ -11,3 +11,15 @@
 //Appending function to button in CELL ROW
 
 [cell.button addTarget:self action:@selector(yourButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+
+//.............
+
+Set the contentHorizontalAlignment:
+
+emailBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+
+//........
+
+You might also want to adjust the content left inset otherwise the text will touch the left border:
+
+emailBtn.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
