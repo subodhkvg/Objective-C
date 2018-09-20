@@ -1,1 +1,6 @@
 
+//READ ONLY
+self.txt_field.enabled = NO;
+
+//HIDE
+self.txt_field.hidden = YES;
