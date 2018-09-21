@@ -1,0 +1,17 @@
+    UIToolbar* Toolbar;
+ 
+    self->Toolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
+    self->Toolbar.tintColor = [UIColor redColor];
+    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(donecall:)];
+    UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [self->Toolbar setItems:[NSArray arrayWithObjects:space,done,nil]];
+    [self->numberToolbar sizeToFit];    
+    -(void)cancelNumberPad:(UIBarButtonItem *)sender{
+    [self.view endEditing:YES];  
+
+
+-(void)donevall:(UIBarButtonItem *)textField{
+    [self.view endEditing:YES];   
+}
+
+cell.textfield1.inputAccessoryView = self->Toolbar;
