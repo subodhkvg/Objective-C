@@ -6,8 +6,7 @@
     UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     [self->Toolbar setItems:[NSArray arrayWithObjects:space,done,nil]];
     [self->numberToolbar sizeToFit];    
-    -(void)cancelNumberPad:(UIBarButtonItem *)sender{
-    [self.view endEditing:YES];  
+   
 
 
 -(void)donevall:(UIBarButtonItem *)textField{
