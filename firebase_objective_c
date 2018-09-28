@@ -33,6 +33,12 @@ if([[FIRAuth auth] currentUser]){
 ------------
 Firebase timestamp : [FIRServerValue timestamp]
 
+------------
+
+INSERt Post autoincremented
+
+ [[[[[self.ref child:@"tblPosts"] childByAutoId] child:@"Book"] child:@"Title"] setValue:@"Good"];
+
 
 
     
