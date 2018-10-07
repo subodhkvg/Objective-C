@@ -15,3 +15,14 @@ FIRDatabaseQuery *myTopPostsQuery = [[[self.ref child:@"tblname"]
      //Delete record in objective C
      
      setValue:nil
+
+//.........
+Fetch Single Record
+
+
+[[[[self.ref child:@"table1"] child:user.uid] child:@"Field2"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+           
+        self->Total = snapshot.value;
+    } withCancelBlock:^(NSError * _Nonnull error) {
+        NSLog(@"%@", error.localizedDescription);
+    }];
