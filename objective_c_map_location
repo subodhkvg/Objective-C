@@ -1,0 +1,10 @@
+//GET Current Cordinates
+CLLocation *center = [[CLLocation alloc] initWithLatitude:location.coordinate.latitude longitude:location.coordinate.longitude];
+ 
+//Show on my Location(Blue) on map 
+[mapView setCenterCoordinate:self->_map_view.userLocation.location.coordinate animated:YES];
+  
+//Focus and zoom my region  
+            MKCoordinateSpan span = MKCoordinateSpanMake(0.001, 0.001);
+            MKCoordinateRegion region = MKCoordinateRegionMake(center.coordinate, span);
+            [mapView setRegion:region animated:YES];
